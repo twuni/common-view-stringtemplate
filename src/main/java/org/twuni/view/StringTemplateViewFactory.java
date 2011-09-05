@@ -12,11 +12,11 @@ public class StringTemplateViewFactory {
 		this.group = new StringTemplateGroup( templateDirectoryName, getClass().getClassLoader().getResource( templateDirectoryName ).getPath() );
 	}
 
-	public String createInstance( String name ) {
+	public String createView( String name ) {
 		return new StringTemplateView( group, name ).toString();
 	}
 
-	public String createInstance( String name, Map<String, ?> model ) {
+	public String createView( String name, Map<String, ?> model ) {
 		return new StringTemplateView( group, name, model ).toString();
 	}
 
