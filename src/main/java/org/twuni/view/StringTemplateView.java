@@ -6,7 +6,7 @@ import java.util.Map;
 import org.antlr.stringtemplate.StringTemplate;
 import org.antlr.stringtemplate.StringTemplateGroup;
 
-public class StringTemplateView {
+public class StringTemplateView extends View {
 
 	private final StringTemplate template;
 
@@ -15,6 +15,7 @@ public class StringTemplateView {
 	}
 
 	public StringTemplateView( StringTemplateGroup parent, String name, Map<String, ?> model ) {
+		super( name, model );
 		this.template = parent.lookupTemplate( name );
 		template.setAttributes( model );
 	}

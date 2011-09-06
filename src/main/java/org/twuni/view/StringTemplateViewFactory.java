@@ -13,13 +13,13 @@ public class StringTemplateViewFactory implements ViewFactory {
 	}
 
 	@Override
-	public String createView( String name ) {
-		return new StringTemplateView( group, name ).toString();
+	public View createView( String name ) {
+		return new StringTemplateView( group, name );
 	}
 
 	@Override
-	public String createView( String name, Map<String, ?> model ) {
-		return new StringTemplateView( group, name, model ).toString();
+	public View createView( String name, Map<String, ?> model ) {
+		return new StringTemplateView( group, name, model );
 	}
 
 }
