@@ -1,5 +1,6 @@
 package org.twuni.view;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.antlr.stringtemplate.StringTemplate;
@@ -10,11 +11,11 @@ public class StringTemplateView {
 	private final StringTemplate template;
 
 	public StringTemplateView( StringTemplateGroup parent, String name ) {
-		this.template = parent.lookupTemplate( name );
+		this( parent, name, new HashMap<String, Object>() );
 	}
 
 	public StringTemplateView( StringTemplateGroup parent, String name, Map<String, ?> model ) {
-		this( parent, name );
+		this.template = parent.lookupTemplate( name );
 		template.setAttributes( model );
 	}
 
